@@ -1,0 +1,122 @@
+From 0921d49a107f27d7829c4365c256e9c0ac8e04e9 Mon Sep 17 00:00:00 2001
+From: Huy Hoang <boydaihungst@gmail.com>
+Date: Tue, 24 Oct 2023 20:28:57 +0700
+Subject: [PATCH] fix-gesture-pill
+
+---
+ packages/SystemUI/res/values/colors.xml                     | 6 +++---
+ .../NavigationBarModeGesturalOverlay/res/values/dimens.xml  | 6 +++---
+ .../res/values/dimens.xml                                   | 6 +++---
+ .../res/values/dimens.xml                                   | 6 +++---
+ .../res/values/dimens.xml                                   | 6 +++---
+ 5 files changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/packages/SystemUI/res/values/colors.xml b/packages/SystemUI/res/values/colors.xml
+index db7eb7a049e7..1963ea0c8e48 100644
+--- a/packages/SystemUI/res/values/colors.xml
++++ b/packages/SystemUI/res/values/colors.xml
+@@ -91,10 +91,10 @@
+     <color name="user_switcher_fullscreen_popup_item_tint">@*android:color/text_color_primary_device_default_dark</color>
+ 
+     <!-- The color of the navigation bar icons. Need to be in sync with ic_sysbar_* -->
+-    <color name="navigation_bar_icon_color">#E5FFFFFF</color>
++    <color name="navigation_bar_icon_color">#00000000</color>
+ 
+-    <color name="navigation_bar_home_handle_light_color">#EBffffff</color>
+-    <color name="navigation_bar_home_handle_dark_color">#99000000</color>
++    <color name="navigation_bar_home_handle_light_color">#00000000</color>
++    <color name="navigation_bar_home_handle_dark_color">#00000000</color>
+ 
+     <!-- The shadow color for light navigation bar icons. -->
+     <color name="nav_key_button_shadow_color">#30000000</color>
+diff --git a/packages/overlays/NavigationBarModeGesturalOverlay/res/values/dimens.xml b/packages/overlays/NavigationBarModeGesturalOverlay/res/values/dimens.xml
+index 674bc749bc11..9f6cac6e0746 100644
+--- a/packages/overlays/NavigationBarModeGesturalOverlay/res/values/dimens.xml
++++ b/packages/overlays/NavigationBarModeGesturalOverlay/res/values/dimens.xml
+@@ -18,13 +18,13 @@
+ -->
+ <resources>
+     <!-- Height of the bottom navigation / system bar. -->
+-    <dimen name="navigation_bar_height">24dp</dimen>
++    <dimen name="navigation_bar_height">0.3dp</dimen>
+     <!-- Height of the bottom navigation bar in portrait; often the same as @dimen/navigation_bar_height -->
+-    <dimen name="navigation_bar_height_landscape">24dp</dimen>
++    <dimen name="navigation_bar_height_landscape">0.3dp</dimen>
+     <!-- Width of the navigation bar when it is placed vertically on the screen -->
+     <dimen name="navigation_bar_width">24dp</dimen>
+     <!-- Height of the bottom navigation / system bar. -->
+     <dimen name="navigation_bar_frame_height">48dp</dimen>
+     <!-- The height of the bottom navigation gesture area. -->
+     <dimen name="navigation_bar_gesture_height">32dp</dimen>
+-</resources>
+\ No newline at end of file
++</resources>
+diff --git a/packages/overlays/NavigationBarModeGesturalOverlayExtraWideBack/res/values/dimens.xml b/packages/overlays/NavigationBarModeGesturalOverlayExtraWideBack/res/values/dimens.xml
+index 674bc749bc11..9f6cac6e0746 100644
+--- a/packages/overlays/NavigationBarModeGesturalOverlayExtraWideBack/res/values/dimens.xml
++++ b/packages/overlays/NavigationBarModeGesturalOverlayExtraWideBack/res/values/dimens.xml
+@@ -18,13 +18,13 @@
+ -->
+ <resources>
+     <!-- Height of the bottom navigation / system bar. -->
+-    <dimen name="navigation_bar_height">24dp</dimen>
++    <dimen name="navigation_bar_height">0.3dp</dimen>
+     <!-- Height of the bottom navigation bar in portrait; often the same as @dimen/navigation_bar_height -->
+-    <dimen name="navigation_bar_height_landscape">24dp</dimen>
++    <dimen name="navigation_bar_height_landscape">0.3dp</dimen>
+     <!-- Width of the navigation bar when it is placed vertically on the screen -->
+     <dimen name="navigation_bar_width">24dp</dimen>
+     <!-- Height of the bottom navigation / system bar. -->
+     <dimen name="navigation_bar_frame_height">48dp</dimen>
+     <!-- The height of the bottom navigation gesture area. -->
+     <dimen name="navigation_bar_gesture_height">32dp</dimen>
+-</resources>
+\ No newline at end of file
++</resources>
+diff --git a/packages/overlays/NavigationBarModeGesturalOverlayNarrowBack/res/values/dimens.xml b/packages/overlays/NavigationBarModeGesturalOverlayNarrowBack/res/values/dimens.xml
+index 674bc749bc11..9f6cac6e0746 100644
+--- a/packages/overlays/NavigationBarModeGesturalOverlayNarrowBack/res/values/dimens.xml
++++ b/packages/overlays/NavigationBarModeGesturalOverlayNarrowBack/res/values/dimens.xml
+@@ -18,13 +18,13 @@
+ -->
+ <resources>
+     <!-- Height of the bottom navigation / system bar. -->
+-    <dimen name="navigation_bar_height">24dp</dimen>
++    <dimen name="navigation_bar_height">0.3dp</dimen>
+     <!-- Height of the bottom navigation bar in portrait; often the same as @dimen/navigation_bar_height -->
+-    <dimen name="navigation_bar_height_landscape">24dp</dimen>
++    <dimen name="navigation_bar_height_landscape">0.3dp</dimen>
+     <!-- Width of the navigation bar when it is placed vertically on the screen -->
+     <dimen name="navigation_bar_width">24dp</dimen>
+     <!-- Height of the bottom navigation / system bar. -->
+     <dimen name="navigation_bar_frame_height">48dp</dimen>
+     <!-- The height of the bottom navigation gesture area. -->
+     <dimen name="navigation_bar_gesture_height">32dp</dimen>
+-</resources>
+\ No newline at end of file
++</resources>
+diff --git a/packages/overlays/NavigationBarModeGesturalOverlayWideBack/res/values/dimens.xml b/packages/overlays/NavigationBarModeGesturalOverlayWideBack/res/values/dimens.xml
+index 674bc749bc11..9f6cac6e0746 100644
+--- a/packages/overlays/NavigationBarModeGesturalOverlayWideBack/res/values/dimens.xml
++++ b/packages/overlays/NavigationBarModeGesturalOverlayWideBack/res/values/dimens.xml
+@@ -18,13 +18,13 @@
+ -->
+ <resources>
+     <!-- Height of the bottom navigation / system bar. -->
+-    <dimen name="navigation_bar_height">24dp</dimen>
++    <dimen name="navigation_bar_height">0.3dp</dimen>
+     <!-- Height of the bottom navigation bar in portrait; often the same as @dimen/navigation_bar_height -->
+-    <dimen name="navigation_bar_height_landscape">24dp</dimen>
++    <dimen name="navigation_bar_height_landscape">0.3dp</dimen>
+     <!-- Width of the navigation bar when it is placed vertically on the screen -->
+     <dimen name="navigation_bar_width">24dp</dimen>
+     <!-- Height of the bottom navigation / system bar. -->
+     <dimen name="navigation_bar_frame_height">48dp</dimen>
+     <!-- The height of the bottom navigation gesture area. -->
+     <dimen name="navigation_bar_gesture_height">32dp</dimen>
+-</resources>
+\ No newline at end of file
++</resources>
+-- 
+2.42.0
+

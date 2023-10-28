@@ -1,0 +1,35 @@
+From e0ef1047edac8df262c846e964cafb4fa23906a9 Mon Sep 17 00:00:00 2001
+From: Huy Hoang <boydaihungst@gmail.com>
+Date: Tue, 24 Oct 2023 21:05:10 +0700
+Subject: [PATCH] fix-duplicate-system-props
+
+---
+ base.mk     | 1 -
+ system.prop | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/base.mk b/base.mk
+index 80d104e..c11b0f6 100644
+--- a/base.mk
++++ b/base.mk
+@@ -33,7 +33,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ 	ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
+ 	ro.build.version.release=$(PLATFORM_VERSION) \
+ 	ro.build.version.security_patch=$(PLATFORM_SECURITY_PATCH) \
+-	ro.adb.secure=0 \
+ 	ro.logd.auditd=true \
+ 	ro.logd.kernel=true \
+ 
+diff --git a/system.prop b/system.prop
+index 48a8f57..d29e163 100644
+--- a/system.prop
++++ b/system.prop
+@@ -1,4 +1,4 @@
+-ro.adb.secure=0
++# ro.adb.secure=0
+ #Some devices have sdcardfs kernel panicing on 8.0
+ #Disable for everyone for the moment
+ ro.sys.sdcardfs=0
+-- 
+2.42.0
+

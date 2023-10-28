@@ -1,0 +1,37 @@
+From 8fb38a5ff852cea01ec08658c9f607d6950c35c2 Mon Sep 17 00:00:00 2001
+From: Huy Hoang <boydaihungst@gmail.com>
+Date: Sat, 28 Oct 2023 02:30:29 +0700
+Subject: [PATCH] Conditionally-revert-Block-Binder-thread-until-incom
+
+---
+ .../telephony/imsphone/ImsPhoneCallTracker.java    | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/src/java/com/android/internal/telephony/imsphone/ImsPhoneCallTracker.java b/src/java/com/android/internal/telephony/imsphone/ImsPhoneCallTracker.java
+index df96af55ff..d48bfcbd8d 100644
+--- a/src/java/com/android/internal/telephony/imsphone/ImsPhoneCallTracker.java
++++ b/src/java/com/android/internal/telephony/imsphone/ImsPhoneCallTracker.java
+@@ -386,7 +386,19 @@ public class ImsPhoneCallTracker extends CallTracker implements ImsPullCall {
+         @Nullable
+         public IImsCallSessionListener onIncomingCall(
+                 @NonNull IImsCallSession c, @Nullable String callId, @Nullable Bundle extras) {
+-            return executeAndWaitForReturn(()-> processIncomingCall(c, callId, extras));
++            final boolean shouldBlockBinderThreadOnIncomingCalls = SystemProperties.getBoolean(
++                    "ro.telephony.block_binder_thread_on_incoming_calls", true);
++            if (shouldBlockBinderThreadOnIncomingCalls) {
++                // we want to ensure we block this binder thread until incoming call setup completes
++                // as to avoid race conditions where the ImsService tries to update the state of the
++                // call before the listeners have been attached.
++                return executeAndWaitForReturn(()-> processIncomingCall(c, callId, extras));
++            } else {
++                // for legacy IMS we want to avoid blocking the binder thread, otherwise
++                // we end up with half dead incoming calls with unattached call session
++                return TelephonyUtils.runWithCleanCallingIdentity(()-> processIncomingCall(c, callId, extras),
++                        mExecutor);
++            }
+         }
+ 
+         @Override
+-- 
+2.42.0
+
