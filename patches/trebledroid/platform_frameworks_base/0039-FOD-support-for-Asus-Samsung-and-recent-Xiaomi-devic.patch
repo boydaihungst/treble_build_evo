@@ -1,7 +1,14 @@
-From 9df7f23724215be334fcbe6642c7de4767c6e2f8 Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 02:18:15 +0700
-Subject: [PATCH] FOD-support-for-Asus-Samsung-and-recent-Xiaomi-devic
+From f8f0e27db4fd44fb2e376e31a2892acd559c8551 Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Sun, 18 Dec 2022 18:20:40 -0500
+Subject: [PATCH 39/45] FOD support for Asus, Samsung and recent Xiaomi devices
+
+Thanks Asus for providing a free device to make this support
+And thanks @davigamer987 for donating enough to get a Samsung FOD device
+to make this
+
+Co-authored-by: jgudec <jakov.gudec@gmail.com>
+Change-Id: Ibd0f9ea8fba584a38c060fd9271549a5e106b4eb
 
 ---
  packages/SystemUI/Android.bp                  |   3 +
@@ -689,4 +696,3 @@ index ece35c522ec7..8c20b9e1bf40 100644
          }
 -- 
 2.42.0
-

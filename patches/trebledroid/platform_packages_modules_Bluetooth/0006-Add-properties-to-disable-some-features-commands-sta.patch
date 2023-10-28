@@ -1,7 +1,9 @@
-From d2addf270bc727a749b377b845bcccf73a5b6ddb Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 02:37:07 +0700
-Subject: [PATCH] Add-properties-to-disable-some-features-commands-sta
+From 38fde0e3896c88ee18150a56d8f984a97e70a393 Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Sat, 27 May 2023 06:41:32 -0400
+Subject: [PATCH 6/7] Add properties to disable some features/commands/states
+ that the ble chip declared but doesnt actually support
+
 
 ---
  system/gd/hci/controller.cc | 72 ++++++++++++++++++++++++++++++++++---
@@ -127,4 +129,3 @@ index 9ded97f0a5..88c8fa9e98 100644
    void le_read_connect_list_size_handler(CommandCompleteView view) {
 -- 
 2.42.0
-

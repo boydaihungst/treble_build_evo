@@ -1,7 +1,11 @@
-From e8d51673127f40de9b7d85c8c96e79a5261d506d Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 02:33:45 +0700
-Subject: [PATCH] audio_hal_interface-Optionally-use-sysbta-HAL
+From 0987ccb088ce9f264cbd6c2bd438ba7d960a6721 Mon Sep 17 00:00:00 2001
+From: Peter Cai <peter@typeblog.net>
+Date: Wed, 24 Aug 2022 15:45:18 -0400
+Subject: [PATCH 2/7] audio_hal_interface: Optionally use sysbta HAL
+
+Required to support sysbta, our system-side bt audio implementation.
+
+Change-Id: I59973e6ec84c5923be8a7c67b36b2e237f000860
 
 ---
  system/audio_hal_interface/aidl/client_interface_aidl.cc | 2 +-
@@ -22,4 +26,3 @@ index 660a141894..6bfd3d434e 100644
      LOG(ERROR) << __func__ << ", can't get aidl version from unknown factory";
 -- 
 2.42.0
-

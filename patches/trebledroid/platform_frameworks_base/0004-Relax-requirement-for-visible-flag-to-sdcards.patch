@@ -1,6 +1,6 @@
-From ddc41bd4b88aa66ecd5a544b2dbcc29c4d6f1c41 Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 01:59:05 +0700
+From d9abd48f34ce986611e9bebed54555add08f14aa Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Tue, 28 Nov 2017 18:28:04 +0100
 Subject: [PATCH] Relax-requirement-for-visible-flag-to-sdcards
 
 ---
@@ -23,4 +23,3 @@ index c3fa938ce9c1..16d02b88859d 100644
                  vol.mountFlags |= VolumeInfo.MOUNT_FLAG_VISIBLE_FOR_WRITE;
 -- 
 2.42.0
-

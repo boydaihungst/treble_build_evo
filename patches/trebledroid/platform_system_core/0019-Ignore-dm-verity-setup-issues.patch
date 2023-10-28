@@ -1,8 +1,14 @@
-From 6db7a65894a3b9ec91d74233e07e8c36b2409796 Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 02:41:05 +0700
-Subject: [PATCH] Ignore-dm-verity-setup-issues
+From 47c88a0360289ef52061af7f2e7f1a23573c1a1d Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Fri, 6 Oct 2023 08:20:48 -0400
+Subject: [PATCH 19/22] Ignore dm-verity setup issues
 
+On Amlogic STB Android 9 vendor, no boot device is setup
+(fstab doesn't use /dev/block/by-name but more direct mappings)
+that means that libavb can't access the partition by-name, thus failing
+to read vbmeta & co, and thus failing setting up dm-verity.
+
+We don't care much about dm-verity so let's just ignore this
 ---
  init/first_stage_mount.cpp | 1 -
  1 file changed, 1 deletion(-)
@@ -19,6 +25,5 @@ index 8ef20ecf9..506f3d1e8 100644
          }
      } else {
          LOG(INFO) << "AVB is not enabled, skip verity setup for '" << begin->mount_point << "'";
--- 
+--
 2.42.0
-

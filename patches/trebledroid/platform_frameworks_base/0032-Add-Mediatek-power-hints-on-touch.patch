@@ -1,7 +1,26 @@
-From df5d45e6bec01f11cde0f6fc54ea1b5a9e2e3e3c Mon Sep 17 00:00:00 2001
-From: Huy Hoang <boydaihungst@gmail.com>
-Date: Sat, 28 Oct 2023 02:09:36 +0700
-Subject: [PATCH] Add-Mediatek-power-hints-on-touch
+From dc79caf62c2ddb3e045c96cecd6f0afa502df7d4 Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Sat, 17 Jun 2023 08:31:55 -0400
+Subject: [PATCH 32/45] Add Mediatek power hints on touch
+
+Mediatek has multiple HALs (which existed concurrently), so it is a bit
+of a mess.
+From what I can tell, mOldMtkPerf is used on Android 10 vendors, while
+mMtkPerf is used on Android 11/12 vendors.
+If anyone has an Android 9 vendor and want to take a look, I think it
+would be something like this:
+vendor.mediatek.hardware.power.V2_0.IPower.powerHint()
+
+On some devices, sending the touch boost isn't very helpful. Our guess
+is that Android 12 rendering got a lot heavier, and then touch boost is
+not enough. So, we add a property to /cheat/ and report a bigger boost:
+APP_ROTATE.
+On the few devices we've seen, touch boost only boosts scheduler, while
+app rotate will also for cpu min frequency.
+Experimentally using this app rotate boost indeed makes the device much
+smoother.
+
+Change-Id: I9f1eac5a20b98920a5d0c8204fe4d165ba069f5a
 
 ---
  services/core/Android.bp                      |  3 ++
@@ -105,4 +124,3 @@ index c4cd1b4b044b..a75ba4060fd2 100644
                  @Override
 -- 
 2.42.0
-
