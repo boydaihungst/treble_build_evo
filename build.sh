@@ -116,13 +116,13 @@ release() {
 }
 
 
-# initRepos
-# syncRepos
-# applyPatches
-# setupEnv
-# buildGappsVariant
-# generatePackages
-# generateOta
+initRepos
+syncRepos
+applyPatches
+setupEnv
+buildGappsVariant
+generatePackages
+generateOta
 release
 END=$(date +%s)
 ELAPSEDM=$(($(($END-$START))/60))
