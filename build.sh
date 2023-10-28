@@ -108,9 +108,9 @@ release() {
 
       echo "--> Uploading ota file"
       pushd $BL/ &>/dev/null
-        git add --all
-        git commit -m "update: ota + patches"
-        git push
+        git add --all || true
+        git commit -m "update: ota + patches" || true
+        git push 
       popd &>/dev/null
     fi
 }
