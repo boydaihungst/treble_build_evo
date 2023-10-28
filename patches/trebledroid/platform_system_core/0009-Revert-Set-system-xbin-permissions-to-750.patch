@@ -1,0 +1,25 @@
+From c3c8ab5aa2b8037eab2ef05033140533bdc10ce8 Mon Sep 17 00:00:00 2001
+From: Huy Hoang <boydaihungst@gmail.com>
+Date: Sat, 28 Oct 2023 02:39:57 +0700
+Subject: [PATCH] Revert-Set-system-xbin-permissions-to-750
+
+---
+ libcutils/fs_config.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libcutils/fs_config.cpp b/libcutils/fs_config.cpp
+index 80a36afee..303f52221 100644
+--- a/libcutils/fs_config.cpp
++++ b/libcutils/fs_config.cpp
+@@ -89,7 +89,7 @@ static const struct fs_path_config android_dirs[] = {
+     { 00755, AID_ROOT,         AID_SHELL,        0, "system/etc" },
+     { 00755, AID_ROOT,         AID_ROOT,         0, "system/etc/ppp" },
+     { 00755, AID_ROOT,         AID_SHELL,        0, "system/vendor" },
+-    { 00750, AID_ROOT,         AID_SHELL,        0, "system/xbin" },
++    { 00751, AID_ROOT,         AID_SHELL,        0, "system/xbin" },
+     { 00751, AID_ROOT,         AID_SHELL,        0, "system/apex/*/bin" },
+     { 00750, AID_ROOT,         AID_SYSTEM,       0, "system_ext/apex/com.android.tethering/bin/for-system" },
+     { 00751, AID_ROOT,         AID_SHELL,        0, "system_ext/bin" },
+-- 
+2.42.0
+

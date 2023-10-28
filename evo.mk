@@ -10,4 +10,4 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/ponces/treble_build_evo/tiramisu/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/boydaihungst/treble_build_evo/udc_A14/ota.json

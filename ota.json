@@ -1,26 +1,11 @@
 {
-  "version": "v2023.09.14",
-  "date": "1694719724",
+  "version": "v2023.10.28",
+  "date": "1698482809",
   "variants": [
     {
-      "name": "treble_arm64_bvN",
-      "size": "1659813204",
-      "url": "https://github.com/ponces/treble_build_evo/releases/download/v2023.09.14/evolution_arm64-ab-7.9.7-unofficial-20230914.img.xz"
-    },
-    {
-      "name": "treble_arm64_bvN-mini",
-      "size": "1659805288",
-      "url": "https://github.com/ponces/treble_build_evo/releases/download/v2023.09.14/evolution_arm64-ab-mini-7.9.7-unofficial-20230914.img.xz"
-    },
-    {
-      "name": "treble_arm64_bvN-pico",
-      "size": "1659804244",
-      "url": "https://github.com/ponces/treble_build_evo/releases/download/v2023.09.14/evolution_arm64-ab-pico-7.9.7-unofficial-20230914.img.xz"
-    },
-    {
-      "name": "treble_arm64_bvN-vndklite",
-      "size": "1613009028",
-      "url": "https://github.com/ponces/treble_build_evo/releases/download/v2023.09.14/evolution_arm64-ab-vndklite-7.9.7-unofficial-20230914.img.xz"
+      "name": "treble_arm64_bgN",
+      "size": "1774444304",
+      "url": "https://sourceforge.net/projects/nubia-6s-pro-pixel-gsi/files/evo_android_14/evolution-x-arm64-ab-gapps-14.0-20231028.img.xz/download"
     }
   ]
 }

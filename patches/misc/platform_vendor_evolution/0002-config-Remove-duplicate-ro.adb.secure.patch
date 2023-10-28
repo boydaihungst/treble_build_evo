@@ -1,0 +1,37 @@
+From 00d5650fbf7234ce87f938bc6180945ae9bddb60 Mon Sep 17 00:00:00 2001
+From: Huy Hoang <boydaihungst@gmail.com>
+Date: Sat, 28 Oct 2023 12:06:03 +0700
+Subject: [PATCH] config: Remove duplicate ro.adb.secure
+
+---
+ config/common.mk | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/config/common.mk b/config/common.mk
+index 4856f2a6..a54be746 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -77,13 +77,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
+     drm.service.enabled=true \
+     media.mediadrmservice.enable=true
+ 
+-ifeq ($(TARGET_BUILD_VARIANT),eng)
+-# Disable ADB authentication
+-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+-else
+-# Enable ADB authentication
+-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+-endif
++# ifeq ($(TARGET_BUILD_VARIANT),eng)
++# # Disable ADB authentication
++# PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
++# else
++# # Enable ADB authentication
++# PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
++# endif
+ 
+ ifneq ($(TARGET_BUILD_VARIANT),eng)
+ # Disable extra StrictMode features on all non-engineering builds
+-- 
+2.42.0
+
