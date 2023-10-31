@@ -1,11 +1,26 @@
 {
-  "version": "v2023.10.28",
-  "date": "1698482809",
+  "version": "v2023.10.31",
+  "date": "1698725684",
   "variants": [
     {
-      "name": "treble_arm64_bgN",
-      "size": "1774444304",
-      "url": "https://sourceforge.net/projects/nubia-6s-pro-pixel-gsi/files/evo_android_14/evolution-x-arm64-ab-gapps-14.0-20231028.img.xz/download"
+      "name": "treble_arm64_bvN",
+      "size": "1778026088",
+      "url": "https://github.com/boydaihungst/treble_build_evo/releases/download/v2023.10.31/evolution_arm64-ab-8-unofficial-20231031.img.xz"
+    },
+    {
+      "name": "treble_arm64_bvN-mini",
+      "size": "1778912660",
+      "url": "https://github.com/boydaihungst/treble_build_evo/releases/download/v2023.10.31/evolution_arm64-ab-mini-8-unofficial-20231031.img.xz"
+    },
+    {
+      "name": "treble_arm64_bvN-vndklite",
+      "size": "1730563612",
+      "url": "https://github.com/boydaihungst/treble_build_evo/releases/download/v2023.10.31/evolution_arm64-ab-mini-vndklite-8-unofficial-20231031.img.xz"
+    },
+    {
+      "name": "treble_arm64_bvN-vndklite",
+      "size": "1729856048",
+      "url": "https://github.com/boydaihungst/treble_build_evo/releases/download/v2023.10.31/evolution_arm64-ab-vndklite-8-unofficial-20231031.img.xz"
     }
   ]
 }
