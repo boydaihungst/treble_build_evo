@@ -66,6 +66,7 @@ setupEnv() {
 
 buildGappsVariant() {
     echo "--> Building treble_arm64_bvN"
+    make -j$(nproc --all) installclean
     lunch treble_arm64_bvN-userdebug
     make -j$(nproc --all) systemimage
     mv $OUT/system.img $BD/system-treble_arm64_bvN.img
@@ -75,8 +76,9 @@ buildGappsVariant() {
 buildMiniVariant() {
     echo "--> Building treble_arm64_bvN-mini"
     (cd vendor/evolution && git am $BL/patches/mini/platform_vendor_evolution/mini-evolution.patch)
-    (cd vendor/gms && git am $BL/patches/mini/platform_vendor_gms/mini-gms.patch)
+    (cd vendor/gms && git am $BL/patches/mini/platform_vendor_gms/mini-gms.patch && rm -rf product/packages/apps/YouTube)
     lunch treble_arm64_bvN-userdebug
+    make -j$(nproc --all) installclean
     make -j$(nproc --all) systemimage
     (cd vendor/evolution && git reset --hard HEAD~1)
     (cd vendor/gms && git reset --hard HEAD~1)
@@ -111,8 +113,6 @@ generatePackages() {
 
 generateOta() {
     echo "--> Generating OTA file"
-    version="$(date +v%Y.%m.%d)"
-    timestamp="$START"
     json="{\"version\": \"$version\",\"date\": \"$timestamp\",\"variants\": ["
     find $BD/ -name "evolution_*" | sort | {
         while read file; do
@@ -155,6 +155,7 @@ release() {
             while read file; do
               filename="$(basename $file)"
               gh release upload $version "$file" --repo boydaihungst/treble_build_evo --clobber
+              rm -rf $file
             done
           }
       popd &>/dev/null

@@ -1,25 +1,25 @@
-From ecc8c3fa39fc1d3ffeab997d9fc75dfc0a74a89d Mon Sep 17 00:00:00 2001
+From 560ed3bc82c939575f64dcc333d105a77718319b Mon Sep 17 00:00:00 2001
 From: Huy Hoang <boydaihungst@gmail.com>
-Date: Mon, 30 Oct 2023 20:53:30 +0700
-Subject: [PATCH] Mini vendor/evolution
+Date: Tue, 31 Oct 2023 19:08:37 +0700
+Subject: [PATCH] mini evolution
 
 ---
- config/common.mk | 2 +-
+ config/common_full_phone.mk | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/config/common.mk b/config/common.mk
-index 4856f2a6..9bfb4ffa 100644
---- a/config/common.mk
-+++ b/config/common.mk
-@@ -205,7 +205,7 @@ TARGET_IS_PIXEL_TABLET ?= false
- TARGET_PIXEL_STAND_SUPPORTED ?= false
- TARGET_SUPPORTS_QUICK_TAP ?= false
- TARGET_USES_LEGACY_BOOTANIMATION ?= false
--TARGET_USES_MINI_GAPPS ?= false
-+TARGET_USES_MINI_GAPPS ?= true
- TARGET_USES_PICO_GAPPS ?= false
- 
- # Face Unlock
+diff --git a/config/common_full_phone.mk b/config/common_full_phone.mk
+index 9cb7fd9f..73c79df2 100644
+--- a/config/common_full_phone.mk
++++ b/config/common_full_phone.mk
+@@ -8,7 +8,7 @@ PRODUCT_PACKAGES += \
+ # Enable support of one-handed mode
+ PRODUCT_PRODUCT_PROPERTIES += \
+     ro.support_one_handed_mode?=true
+-
++TARGET_USES_MINI_GAPPS := true
+ # Inherit from GMS product config
+ ifeq ($(TARGET_USES_MINI_GAPPS),true)
+ $(call inherit-product, vendor/gms/gms_mini.mk)
 -- 
 2.42.0
 

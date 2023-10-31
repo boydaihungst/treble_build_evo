@@ -1,16 +1,14 @@
-From bd63638bf15d0f2702c4e96adc197a49b9d9edd8 Mon Sep 17 00:00:00 2001
+From e6e0910ef6269aedad982e0de9af54befb35e4cb Mon Sep 17 00:00:00 2001
 From: Huy Hoang <boydaihungst@gmail.com>
-Date: Tue, 31 Oct 2023 11:42:03 +0700
-Subject: [PATCH] vendor/gms mini
+Date: Tue, 31 Oct 2023 22:25:26 +0700
+Subject: [PATCH] mini gms
 
 ---
- gms_mini.mk                               |  16 +---------------
- product/packages/apps/YouTube/YouTube.apk | Bin 124982634 -> 0 bytes
- 2 files changed, 1 insertion(+), 15 deletions(-)
- delete mode 100644 product/packages/apps/YouTube/YouTube.apk
+ gms_mini.mk | 15 +--------------
+ 1 file changed, 1 insertion(+), 14 deletions(-)
 
 diff --git a/gms_mini.mk b/gms_mini.mk
-index 9f991d3..fb21278 100644
+index 9f991d3..19168f3 100644
 --- a/gms_mini.mk
 +++ b/gms_mini.mk
 @@ -24,12 +24,7 @@ endif
@@ -53,18 +51,15 @@ index 9f991d3..fb21278 100644
      GCS \
      GoogleDialer \
      GoogleOneTimeInitializer \
-@@ -71,10 +60,8 @@ PRODUCT_PACKAGES += \
+@@ -71,7 +60,6 @@ PRODUCT_PACKAGES += \
      PartnerSetupPrebuilt \
      Phonesky \
      PrebuiltBugle \
 -    SafetyHubPrebuilt \
      SettingsIntelligenceGooglePrebuilt \
      SetupWizardPrebuilt \
--    TurboPrebuilt \
-     Velvet \
-     WellbeingPrebuilt
- 
-@@ -85,7 +72,6 @@ PRODUCT_PACKAGES += \
+     TurboPrebuilt \
+@@ -85,7 +73,6 @@ PRODUCT_PACKAGES += \
  
  # system/priv-app
  PRODUCT_PACKAGES += \
@@ -72,9 +67,6 @@ index 9f991d3..fb21278 100644
      GooglePackageInstaller \
      TagGoogle
  
-diff --git a/product/packages/apps/YouTube/YouTube.apk b/product/packages/apps/YouTube/YouTube.apk
-deleted file mode 100644
-index 139923ee8b8df4eb66c8fbb8d738c291cde6d435..0000000000000000000000000000000000000000
 -- 
 2.42.0
 
