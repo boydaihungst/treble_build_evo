@@ -136,28 +136,28 @@ generateOta() {
 
 release() {
     if [[ $(git config user.email) == *"$GIT_OWNER@"* ]]; then
-      # pushd $BD/ &>/dev/null
-      #   echo "--> Uploading rom"
-      #     gh api \
-      #     --method POST \
-      #     -H "Accept: application/vnd.github+json" \
-      #     -H "X-GitHub-Api-Version: 2022-11-28" \
-      #     /repos/$GIT_OWNER\/$GIT_REPO/releases \
-      #     -f tag_name="$version" \
-      #     -f target_commitish='udc_A14' \
-      #     -f name="$version" \
-      #     -F draft=false \
-      #     -F prerelease=false \
-      #     -F generate_release_notes=false
+      pushd $BD/ &>/dev/null
+        echo "--> Uploading rom"
+          gh api \
+          --method POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          /repos/$GIT_OWNER\/$GIT_REPO/releases \
+          -f tag_name="$version" \
+          -f target_commitish='udc_A14' \
+          -f name="$version" \
+          -F draft=false \
+          -F prerelease=false \
+          -F generate_release_notes=false
 
 
-      #     find $BD/ -name "evolution_*.img.xz" | sort | {
-      #       while read file; do
-      #         filename="$(basename $file)"
-      #         gh release upload $version "$file" --repo boydaihungst/treble_build_evo --clobber
-      #       done
-      #     }
-      # popd &>/dev/null
+          find $BD/ -name "evolution_*.img.xz" | sort | {
+            while read file; do
+              filename="$(basename $file)"
+              gh release upload $version "$file" --repo boydaihungst/treble_build_evo --clobber
+            done
+          }
+      popd &>/dev/null
 
       echo "--> Uploading ota file"
       pushd $BL/ &>/dev/null
@@ -168,14 +168,14 @@ release() {
     fi
 }
 
-# initRepos
-# syncRepos
-# applyPatches
-# setupEnv
-# buildGappsVariant
-# buildMiniVariant
-# buildVndkliteVariant
-# generatePackages
+initRepos
+syncRepos
+applyPatches
+setupEnv
+buildGappsVariant
+buildMiniVariant
+buildVndkliteVariant
+generatePackages
 generateOta
 release
 END=$(date +%s)
